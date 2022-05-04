@@ -54,3 +54,6 @@ adf.test(residual_temp)
 acf(residual_temp)
 pacf(residual_temp)
 
+ar_model = burg(residual_temp, 11)
+ma_model = hannan(residual_temp, p=0, q=2)
+arma = autofit(residual_temp, p=0:10, q=0:5)
