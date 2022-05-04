@@ -98,7 +98,7 @@ pacf(residual_temp)
 ar_model = burg(residual_temp, 11)
 ma_model = arma(residual_temp, p=0, q=2)
 arma_model = autofit(residual_temp, p=0:10, q=0:10)
-arma_model = autofit(residual_temp, p=3, q=5)
+# arma_model = autofit(residual_temp, p=3, q=5)
 f = forecast(data_train$"LandAverageTemperature", c("season",12,"diff",1), arma_model, 601)
 
 fig <- plot_ly(
